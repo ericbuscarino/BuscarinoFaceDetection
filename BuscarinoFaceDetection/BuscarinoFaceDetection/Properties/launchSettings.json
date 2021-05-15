@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "BuscarinoFaceDetection": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "./key.json",
+        "GOOGLE_CLOUD_PROJECT": "volparacodetest"
+      }
+    }
+  }
+}
