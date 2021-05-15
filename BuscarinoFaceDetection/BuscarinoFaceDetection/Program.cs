@@ -1,11 +1,5 @@
-﻿using System;
-using System.IO;
-using System.IO.Abstractions;
-using BuscarinoFaceDetection.Models;
+﻿using System.IO.Abstractions;
 using BuscarinoFaceDetection.Services;
-using Google.Cloud.Vision.V1;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BuscarinoFaceDetection

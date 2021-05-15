@@ -1,24 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO.Abstractions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BuscarinoFaceDetection.Models;
 using BuscarinoFaceDetection.Services;
 using Google.Cloud.Vision.V1;
-using Microsoft.Extensions.Options;
 
 namespace BuscarinoFaceDetection
 {
     public class Application
     {
-        private readonly IFileSystem _fileSystem;
         private readonly IHelperServices _helper;
 
-        public Application(IFileSystem fileSystem, IHelperServices helper)
+        public Application(IHelperServices helper)
         {
-            _fileSystem = fileSystem;
             _helper = helper;
         }
         public void Run(){

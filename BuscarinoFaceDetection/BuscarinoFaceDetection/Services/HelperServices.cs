@@ -34,8 +34,9 @@ namespace BuscarinoFaceDetection.Services
         /// </summary>
         /// <param name="files"></param>
         /// <param name="client"></param>
+        /// <param name="confidenceThreshold"></param>
         /// <returns></returns>
-        public List<FaceResult> GetFaceResults(string[] files, ImageAnnotatorClient client)
+        public List<FaceResult> GetFaceResults(string[] files, ImageAnnotatorClient client, double confidenceThreshold = .7)
         {
             var faceResults = new List<FaceResult>();
 
@@ -46,7 +47,7 @@ namespace BuscarinoFaceDetection.Services
                 var faceResult = new FaceResult
                 {
                     Name = Path.GetFileName(file),
-                    Count = response.Count(a => a.DetectionConfidence >= .7)
+                    Count = response.Count(a => a.DetectionConfidence >= confidenceThreshold)
                 };
                 faceResults.Add(faceResult);
             }
