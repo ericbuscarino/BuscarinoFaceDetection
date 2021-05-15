@@ -12,9 +12,12 @@ namespace BuscarinoFaceDetection
         {
             _helper = helper;
         }
-        public void Run(){
+        public void Run()
+        {
             try
             {
+                Console.WriteLine("Hold on, we're finding faces...");
+
                 var client = ImageAnnotatorClient.Create();
 
                 var sourceDirectory =
@@ -22,9 +25,13 @@ namespace BuscarinoFaceDetection
 
                 var files = _helper.GetImageFilePaths(sourceDirectory);
 
+                Console.WriteLine("Analyzing faces");
+
                 var faceResults = _helper.GetFaceResults(files, client);
 
                 _helper.WriteJsonResults(faceResults);
+
+                Console.WriteLine("All done, the faces have been analyzed");
             }
             catch (AnnotateImageException e)
             {
