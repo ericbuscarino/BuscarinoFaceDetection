@@ -11,6 +11,8 @@ This is a basic proof of concept console app using .net core 5. It takes supplie
 * Validation that all files are acceptable image files
 * Update to web user interface for easy UI in supplying images and providing result file for download
 * Implementation of secrets and using configuration to inject the api key and id into the ImmageAnnotatorClientBuilder
+* Implement async version of api calls
+* Potentially implement batch annotation calls instead of doing one call per image
 * Refactor HelperServices
   * Refactor GetImageFilePaths into a broader repository for accessing files and allowing for other sources of images
   * Refactor GetFaceResults to allow for user input of confidence and move it into its own factory
